@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_135545) do
+ActiveRecord::Schema.define(version: 2021_05_24_145555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.integer "duration"
+    t.bigint "user_id", null: false
+    t.string "playlist_title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "score"
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_players_on_game_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "title"
+    t.integer "songs_number"
+    t.integer "spotify_id"
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "title"
+    t.string "artist"
+    t.integer "duration"
+    t.integer "spotify_id"
+    t.string "spotify_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tracks_lists", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "track_id", null: false
+    t.boolean "played_track"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_tracks_lists_on_game_id"
+    t.index ["track_id"], name: "index_tracks_lists_on_track_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +70,15 @@ ActiveRecord::Schema.define(version: 2021_05_24_135545) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "spotify_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "games", "users"
+  add_foreign_key "players", "games"
+  add_foreign_key "tracks_lists", "games"
+  add_foreign_key "tracks_lists", "tracks"
 end
