@@ -7,7 +7,7 @@
       <h3 class="mt-1"><%= @track[0].artist.tr('"[','').tr(']"','') %></h3>
     </div>
 
-    <h3 class="mt-5">Select the winner</h3>
+    <h3 class="mt-5" style="color: white">Select the winner</h3>
     <div class="margin" data-controller="update-player-score">
         <% @game.players.each do |player| %>
             <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "mt-5 btn-player player d-flex justify-content-between" do %>
@@ -23,5 +23,4 @@
       <%= link_to "Next", results_game_path(@game), class: "btn-player" %>
     </div>
   </div>
-
 </div>
