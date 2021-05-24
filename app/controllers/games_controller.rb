@@ -46,6 +46,7 @@ class GamesController < ApplicationController
   def solution
     @game = Game.find(params[:id])
     authorize @game
+    @track = Track.where(title: "Lovely Day")
   end
 
   def results
