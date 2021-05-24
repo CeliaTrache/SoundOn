@@ -6,4 +6,8 @@
   <% end %>
 </ul>
 
-<div id="player" data-token="<%= @user.token %>"><%= @user.token %></div>
+<button type="button" id="start"> Start </button>
+<button type="button" id="time"> Add 15s </button>
+<button type="button" id="stop"> Stop </button>
+
+<div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
