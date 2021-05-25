@@ -1,1 +1,5 @@
-<h1>New Game</h1>
+<h2>Set Blind Test Duration</h2>
+<%= simple_form_for @game do |f| %>
+  <%= f.input :duration, as: :integer, required: true %>
+  <%= f.button :submit, "Set duration", class: "btn btn-primary" %>
+<% end %>
