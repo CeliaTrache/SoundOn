@@ -1,8 +1,10 @@
 class GamesPolicy < ApplicationPolicy
-  #class Scope < Scope
-    #def resolve
-      #scope.all
-    #end
+  
+    class Scope < Scope
+      def resolve
+        scope.all
+      end
+    end
 
     def new?
       return true
@@ -31,6 +33,4 @@ class GamesPolicy < ApplicationPolicy
     def result?
       return true
     end
-
-  end
 end
