@@ -8,10 +8,9 @@
     </div>
     <div class="start-blindtest">Start a blind test
     </div>
-    <div class= "btn-white">
-      <%= link_to '', playlist_index_path, class:"btn btn-ghost" %>
+    <div class= "btn btn-ghost">
     </div>
-    <%= link_to '/users/auth/spotify' do %>
+    <%= link_to user_spotify_omniauth_authorize_path do %>
       <div class="start-button" >
         <img src="<%=image_path "start.JPG"%>">
       </div>
