@@ -1,4 +1,4 @@
 class Player < ApplicationRecord
   belongs_to :game
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true
 end
