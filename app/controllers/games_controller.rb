@@ -17,6 +17,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @user = current_user
     authorize @game
   end
 
