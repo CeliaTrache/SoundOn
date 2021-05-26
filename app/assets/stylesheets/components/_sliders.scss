@@ -1,0 +1,95 @@
+// duration slider
+$main__color: #E94560;
+$text__color: #16213E;
+$range__size: 186px;
+$range__width: 10px;
+$dial__size: 26px;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh
+}
+
+.range {
+  border-radius: 50%;
+  display: table;
+  height: $range__size;
+  position: relative;
+  width: $range__size;
+
+  input {
+    opacity: 0;
+    position: absolute
+  }
+
+  .dial {
+    background-color: #FFF;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    height: $dial__size;
+    margin-left: -$dial__size/2;
+    position: absolute;
+    top: -$dial__size/2;
+    transform: translateX(#{$range__size/2}) translateY(#{$range__width/2});
+    width: $dial__size;
+    z-index: 40;
+    &:focus {
+      outline: 0
+    }
+  }
+  .info {
+    background-color: #FFF;
+    border-radius: 50%;
+    bottom: $range__width;
+    color: $text__color;
+    cursor: default;
+    display: table-cell;
+    font: 400 16px/1.1 'Lato', sans-serif;
+    left: $range__width;
+    padding-top: 22%;
+    position: absolute;
+    right: $range__width;
+    text-align: center;
+    top: $range__width;
+    user-select: none;
+    text-transform: uppercase;
+    z-index: 30
+  }
+  .count {
+    color: $main__color;
+    display: block;
+    font-size: 50px;
+    font-weight: 700
+  }
+}
+
+.slice {
+  border-radius: $range__size 0 0 $range__size;
+  background-color: $main__color;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  user-select: none;
+  width: 50%;
+  z-index: 10;
+  &.right {
+    border-radius: 0 $range__size $range__size 0;
+    right: 0;
+    .blocker {
+      left: 0;
+      right: auto;
+      transform-origin: 0 25%;
+    }
+  }
+  .blocker {
+    background-color: #eee;
+    height: 200%;
+    position: absolute;
+    right: 0;
+    transform-origin: 100% 25%;
+    width: 200%
+  }
+}

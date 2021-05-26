@@ -1,0 +1,39 @@
+
+// playlist cards
+
+.card-playlist {
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  width: 160px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 8px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// score cards
+
+.card-score {
+  background-color: #0F3460;
+  height: 100px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 8px;
+  padding-top: 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+}

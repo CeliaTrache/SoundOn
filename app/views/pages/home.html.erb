@@ -1,5 +1,11 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to 'Sign in with Spotify', user_spotify_omniauth_authorize_path %>
+<%= render 'shared/playlist_cards' %>
+
+<%= render 'shared/score_cards' %>
+
+<%= render 'shared/players_button' %>
+
+<%#= link_to 'Sign in with Spotify', user_spotify_omniauth_authorize_path %>
 
