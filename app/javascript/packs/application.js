@@ -35,3 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initSlider();
 });
+
+import "controllers"
