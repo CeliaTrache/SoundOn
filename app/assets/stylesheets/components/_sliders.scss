@@ -5,13 +5,6 @@ $range__size: 186px;
 $range__width: 10px;
 $dial__size: 26px;
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh
-}
-
 .range {
   border-radius: 50%;
   display: table;
