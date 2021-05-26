@@ -4,13 +4,14 @@ Player.delete_all
 Game.delete_all
 User.delete_all
 Playlist.delete_all
+Track.delete_all
 
 celia = User.create(first_name: "Celia", last_name: "Trache", email: "celiatrache@gmail.com", password: "azerfvbnjklo")
 
 
 RSpotify.authenticate("2f6e9a91424245a4ba492468eccc9ec3", "51f213d73aa947e88ad9a7a886b233c7")
 
-rock_playlists = RSpotify::Playlist.search('Rock', limit: 1)
+rock_playlists = RSpotify::Playlist.search('Rock', limit: 10)
 
 puts "Launching playlists & tracks load"
 
