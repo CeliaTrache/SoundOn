@@ -29,14 +29,24 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.update(game_params)
     authorize @game
-    redirect_to game_path(@game)
+    if player_params
+      player_params[:players_attributes].each_key do |id|
+        Player.create(game: @game, nickname: player_params[:players_attributes].values[id.to_i][:nickname])
+      end
+      redirect_to game_path(@game)
+    else
+      render :edit
+    end
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:duration, players_attributes: [:id, :nickname])
+    params.require(:game).permit(:duration)
+  end
+
+  def player_params
+    params.require(:game).permit(players_attributes: [:id, :nickname])
   end
 end
