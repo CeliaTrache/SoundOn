@@ -1,0 +1,9 @@
+<p>You just created a new game with a duration of <%= @game.duration %> minutes </p>
+<p>Players are :</p>
+<ul>
+  <% @game.players.each do |player| %>
+    <li><%= player.nickname %></li>
+  <% end %>
+</ul>
+
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
