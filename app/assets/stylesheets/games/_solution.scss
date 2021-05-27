@@ -37,7 +37,7 @@ h3 {
 }
 
 .player-name-active {
-  background-color: #24202B;
+  background-color: #E158F9;
   color: white;
   width: 340px;
   border-radius: 12px;
@@ -51,10 +51,15 @@ h3 {
   font-size: 20px;
   letter-spacing: 0.75px;
   line-height: 24px;
-  outline: 3px solid #E158F9;
+  //outline: 3px solid #E158F9;
   padding: 6px 40px;
   margin-bottom: 10px;
 }
+
+.player-name-active .player-name {
+  background-color: #E158F9;
+}
+
 
 #score {
   color: #C19CFC;
