@@ -1,0 +1,12 @@
+<div class="d-flex flex-column align-items-center">
+  <h2>Blind Test is over!</h2>
+
+  <p class="mt-5">Score recap</p>
+
+
+  <div class="d-flex flex-column">
+    <% @game.players.each do |player| %>
+        <%= link_to "#{player.nickname} • #{player.score || "0 pt"} #{"pts" if player.score}"%>
+    <% end %>
+  </div>
+</div>

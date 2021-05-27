@@ -46,6 +46,13 @@ class GamesController < ApplicationController
     authorize @game
   end
 
+  def results
+    @game = Game.find(params[:id])
+    authorize @game
+    @players = @game.players
+  end
+
+
   private
 
   def game_params
