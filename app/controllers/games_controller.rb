@@ -18,6 +18,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @user = current_user
+    @track = Track.first
     authorize @game
   end
 
