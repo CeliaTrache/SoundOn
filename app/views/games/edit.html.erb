@@ -1,24 +1,33 @@
-<h2>Add Players</h2>
+<div class="background-home d-flex flex-column align-items-center pt-5">
 
-<%= form_tag edit_game_path(@game), method: :get do %>
-  <%= number_field_tag :number_of_players,
-    params[:number_of_players],
-    class: "form-control",
-    placeholder: "How many players ?"
-  %>
-  <%= submit_tag "Set players", class: "btn btn-primary" %>
-<% end %>
+  <h3 class="mb-4">Number of players</h3>
+  <%= render "shared/players_slider" %>
 
-<% if @number_of_players %>
-  <%= simple_form_for @game do |f| %>
-    <%# <%= f.simple_fields_for :players do |p| %>
-      <%# <%= p.input :nickname, label: 'Player name', as: :string, required: true %>
-    <%# <% end %>
-    <% @number_of_players.times do |i| %>
-      <input class="form-control string required" required="required" aria-required="true" type="text" value="" name="game[players_attributes][<%= i %>][nickname]" id="game_players_attributes_<%= i %>_nickname">
-      <% i += 1 %>
-    <% end %>
-
-    <%= f.button :submit, "Play", class: "btn btn-primary" %>
+  <%= form_tag edit_game_path(@game), method: :get, style: "display:none;" do %>
+    <%= number_field_tag :number_of_players,
+      params[:number_of_players],
+      class: "form-control",
+      placeholder: "How many players ?"
+    %>
+    <%= submit_tag "Set players", class: "btn btn-primary" %>
   <% end %>
-<% end %>
+
+  <div class= "my-4" data-controller="set-players">
+    <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "my-4 btn-player" %>
+  </div>
+
+  <% if @number_of_players %>
+    <%= simple_form_for @game do |f| %>
+      <%# <%= f.simple_fields_for :players do |p| %>
+        <%# <%= p.input :nickname, label: 'Player name', as: :string, required: true %>
+      <%# <% end %>
+      <% @number_of_players.times do |i| %>
+        <input class="form-control string required game-players mb-2" required="required" aria-required="true" type="text" value="" name="game[players_attributes][<%= i %>][nickname]" id="game_players_attributes_<%= i %>_nickname">
+        <% i += 1 %>
+      <% end %>
+      <div class="d-flex flex-column align-items-center">
+        <%= f.button :submit, "Play", class: "btn-player" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
