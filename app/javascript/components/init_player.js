@@ -95,12 +95,6 @@ const initPlayer = () => {
          console.log('Paused!');
       })}, timer)
     })
-
-    stopLoc.addEventListener('click', (event) => {
-      player.togglePlay().then(() => {
-        console.log('Toggled playback!');
-      });
-    })
   };
 }
 

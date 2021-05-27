@@ -16,6 +16,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @questions = ['Find the artist !','Find the title !']
     @game = Game.find(params[:id])
     @user = current_user
     @track = Track.first
