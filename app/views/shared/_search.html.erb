@@ -1,0 +1,12 @@
+<div class="form-search">
+  <%= form_tag playlists_path, class: "search d-flex pb-7", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search by title, artist or category"
+      %>
+    <%= button_tag(type: "submit", class: "btn btn-default") do %>
+       <i class="fas fa-search"></i>
+    <% end %>
+  <% end %>
+</div>
