@@ -53,7 +53,6 @@ class GamesController < ApplicationController
     @players = @game.players
   end
 
-
   private
 
   def game_params

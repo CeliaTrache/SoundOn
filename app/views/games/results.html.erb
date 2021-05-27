@@ -1,12 +1,18 @@
-<div class="d-flex flex-column align-items-center">
-  <h2>Blind Test is over!</h2>
 
-  <p class="mt-5">Score recap</p>
+<div class="container mt-8">
+  <div class="d-flex flex-column align-items-center">
+    <h2>Blind Test is over!</h2>
+
+    <p class="mt-5">Score recap</p>
 
 
-  <div class="d-flex flex-column">
-    <% @game.players.each do |player| %>
-        <%= link_to "#{player.nickname} • #{player.score || "0 pt"} #{"pts" if player.score}"%>
-    <% end %>
+    <div class="wrapper">
+      <% @game.players.each do |player| %>
+        <div class="card-score" >
+          <p><%= "#{player.nickname}" %></p>
+          <p><%= "#{player.score || "0"} #{"pts" if player.score}" %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
