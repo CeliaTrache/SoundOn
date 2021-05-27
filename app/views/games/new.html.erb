@@ -1,9 +1,11 @@
-<h2>Set Blind Test Duration</h2>
-<%= simple_form_for @game do |f| %>
-  <%= f.input :duration, as: :integer, required: true %>
-  <%= f.button :submit, "Set duration", class: "btn btn-primary" %>
-<% end %>
+<div class="background-home">
+  <h2>Set Blind Test Duration</h2>
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :duration, as: :integer, required: true %>
+    <%= f.button :submit, "Set duration", class: "btn btn-primary" %>
+  <% end %>
 
-<%= render "shared/duration_slider" %>
+  <%= render "shared/duration_slider" %>
 
-<%= link_to "Next", games_path, method: :post, class: "mt-5 btn btn-outline-dark player" %>
+  <%= link_to "Next", games_path, method: :post, class: "mt-5 btn-player" %>
+</div>
