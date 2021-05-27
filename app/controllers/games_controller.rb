@@ -17,6 +17,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @user = current_user
     authorize @game
   end
 
@@ -38,6 +39,11 @@ class GamesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def solution
+    @game = Game.find(params[:id])
+    authorize @game
   end
 
   private
