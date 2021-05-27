@@ -27,11 +27,17 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initSlider } from '../components/slider';
 
+import { initPlayer } from '../components/init_player';
+import { initSlider } from '../components/slider';
+import { countdown } from '../components/countdown';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initPlayer();
   initSlider();
+  countdown();
 });
+
+import "controllers"

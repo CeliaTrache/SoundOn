@@ -16,7 +16,10 @@ class GamesController < ApplicationController
   end
 
   def show
+    @questions = ['Find the artist !','Find the title !']
     @game = Game.find(params[:id])
+    @user = current_user
+    @track = Track.first
     authorize @game
   end
 
@@ -38,6 +41,17 @@ class GamesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def solution
+    @game = Game.find(params[:id])
+    authorize @game
+  end
+
+  def results
+    @game = Game.find(params[:id])
+    authorize @game
+    @players = @game.players
   end
 
   private

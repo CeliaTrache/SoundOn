@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+
+.background-home {
+  background-image: url(background-image.png);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.start-button {
+  padding-left: 22px
+}
+
+.start-blindtest {
+  padding-bottom: 235px;
+}
+
+a {
+  color:white;
+  margin-left: 59px;
+}
+
+a:hover {
+ color: #E94560;
+}

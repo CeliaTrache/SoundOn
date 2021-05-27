@@ -1,6 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-
-<%= link_to 'Sign in with Spotify', user_spotify_omniauth_authorize_path %>
-
+<div class="background-home">
+  <div class="container">
+    <div class="soundon">SOUND
+    </div>
+    <div class="soundon-chrono">
+      <img src="<%=image_path "chronometre-2.png"%>">N
+    </div>
+    <div class="start-blindtest">Start a blind test
+    </div>
+    <%= link_to new_game_path do %>
+      <div class="start-button" >
+        <img src="<%=image_path "Start-button-red2.png"%>">
+      </div>
+    <%end%>
+    <%= link_to "sign in with your spotify account", user_spotify_omniauth_authorize_path %>
+  </div>
+</div>

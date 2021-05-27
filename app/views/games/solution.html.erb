@@ -1,0 +1,20 @@
+<div class="background-home">
+  <div class="d-flex flex-column align-items-center">
+    <h2>The answer was...</h2>
+
+    <p class="mt-5">TODO // The answer will appear here</p>
+
+    <h3 class="mt-5">Select the winner</h3>
+
+    <div class="d-flex flex-column" data-controller="update-player-score">
+      <% @game.players.each do |player| %>
+          <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "mt-5 btn-player player d-flex justify-content-between" do %>
+          <div><%= player.nickname %></div>
+          <div>•</div>
+          <div id="score"><%= player.score || "0 pt" %></div>
+          <%= "pts" if player.score %>
+          <% end%>
+      <% end %>
+    </div>
+  </div>
+</div>
