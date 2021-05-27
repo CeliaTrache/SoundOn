@@ -5,5 +5,10 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: bolder;
-  text-decoration: none
+  text-decoration: none;
+  &:hover {
+    color: white;
+    background-color: #E94560;
+    text-decoration: none
+  }
 }

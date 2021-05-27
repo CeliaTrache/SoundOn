@@ -4,15 +4,10 @@ import { csrfToken } from "@rails/ujs";
 export default class extends Controller {
   static targets = ['link', 'score'];
 
-  // connect() {
-  //   console.log(this.element);
-  //   console.log(this.scoreTarget);
-  // }
-
   send(event) {
     event.preventDefault();
-    // console.log(event.currentTarget);
-    const url = event.currentTarget.href;
+    const winner = event.currentTarget;
+    const url = winner.href;
 
     fetch(url, {
       method: 'PATCH',
@@ -21,9 +16,8 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        // console.log(data.score);
-        // console.log(this.linkTarget.innerHTML);
-        // this.linkTarget.innerHTML = `julien • ${data.score}pts`
+        const score = winner.querySelector('#score');
+        score.innerHTML = data.score;
       });
   }
 }
