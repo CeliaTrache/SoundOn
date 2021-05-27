@@ -24,11 +24,7 @@
   background-color: #0F3460;
   height: 100px;
   width: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  padding-left: 8px;
-  padding-top: 16px;
+  padding-top: 20px;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -36,4 +32,15 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   flex-wrap: wrap;
+  & p {
+    margin-left: 12px
+  }
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+

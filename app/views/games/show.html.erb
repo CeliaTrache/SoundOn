@@ -1,9 +1,9 @@
-<p>You just created a new game with a duration of <%= @game.duration %> minutes </p>
-<p>Players are :</p>
-<ul>
-  <% @game.players.each do |player| %>
-    <li><%= player.nickname %></li>
-  <% end %>
-</ul>
+<h1><%= @questions.sample %></h1>
 
-<div id="player" data-token="<%= @user.token %>"><%= @user.token %></div>
+<div id="app"></div>
+
+<button type="button" id="start" class="btn-player"> Start </button>
+<button type="button" id="time" class="btn-player"> Add 15s </button>
+<%= link_to "Points Allocation", solution_game_path(@game), class: 'btn-player' %>
+
+<div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
