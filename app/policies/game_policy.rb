@@ -29,7 +29,7 @@ class GamePolicy < ApplicationPolicy
     return true
   end
 
-  def result?
+  def results?
     return true
   end
 end
