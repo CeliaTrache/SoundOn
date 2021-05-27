@@ -41,3 +41,17 @@
 h3 {
   margin-top: -25px
 }
+
+.card-playlist {
+  color: white;
+  font-weight: bold;
+}
+
+.card-playlist:hover {
+  color:#E94560;
+}
+
+.card-playlist:active
+{
+  border: 5px solid black;
+}
