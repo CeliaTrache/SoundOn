@@ -55,3 +55,26 @@ h3 {
 {
   border: 5px solid black;
 }
+
+.wrapper1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.form-search {
+  margin-bottom: 35px;
+  margin-left: 38px;
+  margin-right: 19px;
+}
+
+.error-message {
+  color: white;
+  font-weight: bold;
+  margin-left: 62px;
+}
+
+.around {
+  padding-bottom: 10px;
+}

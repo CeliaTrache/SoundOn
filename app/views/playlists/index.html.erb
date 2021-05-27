@@ -1,10 +1,17 @@
-<ul>
-    <%= render "shared/search" %>
-    <% @playlists.each do |playlist| %>
-  <div class="container mt-2">
-    <div class="card-playlist" style="background-image: url(<%= playlist.image_url%>)">
-      <%= playlist.title %>
-    </div>
+<div class="around">
+  <%= render "shared/search" %>
+  <% if @playlists.empty? == true %>
+  <div class="error-message center">
+  <%= "No playlists found" %>
   </div>
-    <% end %>
-</ul>
+  <% end %>
+
+  <div class="wrapper1 align-items-center">
+  <% @playlists.each do |playlist| %>
+    <div class="card-playlist mt-2" style="background-image: url(<%= playlist.image_url%>)">
+      <%= playlist.title.truncate_words(4) %>
+    </div>
+  <% end %>
+  
+  </div>
+</div>
