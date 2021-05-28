@@ -2,7 +2,9 @@
   <div class="d-flex flex-column align-items-center">
     <h2>The answer was...</h2>
 
-    <p class="mt-5">TODO // The answer will appear here</p>
+    <div class="card-playlist mt-5">
+      <p>Lovely Day, by Bill Withers</p>
+    </div>
 
     <h3 class="mt-5">Select the winner</h3>
 
@@ -15,6 +17,10 @@
           <%= "pts" if player.score %>
           <% end%>
       <% end %>
+    </div>
+
+    <div class= "mt-5">
+      <%= link_to "Next", results_game_path(@game), class: "btn-player" %>
     </div>
   </div>
 </div>
