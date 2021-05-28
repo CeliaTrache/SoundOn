@@ -1,9 +1,11 @@
-<h1><%= @questions.sample %></h1>
+<div class="d-flex flex-column align-items-center">
+  <h1><%= @questions.sample %></h1>
 
-<div id="app"></div>
+  <div id="app"></div>
 
-<button type="button" id="start" class="btn-player"> Start </button>
-<button type="button" id="time" class="btn-player"> Add 15s </button>
-<%= link_to "Points Allocation", solution_game_path(@game), class: 'btn-player' %>
+  <button type="button" id="start" class="btn-player"> Start </button>
+  <button type="button" id="time" class="btn-player"> Add 15s </button>
+  <%= link_to "Points Allocation", solution_game_path(@game), class: 'btn-player' %>
 
-<div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track[0].spotify_url %>"></div>
+  <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track[0].spotify_url %>"></div>
+</div>

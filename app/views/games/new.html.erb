@@ -1,7 +1,6 @@
-<div class="background-home d-flex flex-column align-items-center pt-5">
+<div class="background-pages new d-flex flex-column align-items-center">
 
-
-  <h3 class="mb-5">Game Duration</h3>
+  <h1>Game Duration</h1>
   <%= render "shared/duration_slider" %>
 
   <div style="display:none;">
@@ -11,7 +10,7 @@
     <% end %>
   </div>
 
-  <div class= "mt-5" data-controller="set-duration">
+  <div class="btn-next" data-controller="set-duration">
     <%= link_to "Next", games_path, data: { action: 'click->set-duration#send', turbo: false}, class: "btn-player" %>
   </div>
 
