@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     @questions = ['Find the artist !','Find the title !']
     @game = Game.find(params[:id])
     @user = current_user
-    @track = Track.first
+    @track = Track.where(title: "Lovely Day")
     authorize @game
   end
 

@@ -6,4 +6,4 @@
 <button type="button" id="time" class="btn-player"> Add 15s </button>
 <%= link_to "Points Allocation", solution_game_path(@game), class: 'btn-player' %>
 
-<div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
+<div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track[0].spotify_url %>"></div>
