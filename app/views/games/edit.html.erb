@@ -1,6 +1,6 @@
-<div class="background-home d-flex flex-column align-items-center pt-5">
+<div class="background-pages edit d-flex flex-column align-items-center">
 
-  <h3 class="mb-4">Number of players</h3>
+  <h1>Players</h1>
   <%= render "shared/players_slider" %>
 
   <%= form_tag edit_game_path(@game), method: :get, style: "display:none;" do %>
@@ -12,7 +12,7 @@
     <%= submit_tag "Set players", class: "btn btn-primary" %>
   <% end %>
 
-  <div class= "my-4" data-controller="set-players">
+  <div class= "btn-next" data-controller="set-players">
     <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "my-4 btn-player" %>
   </div>
 
