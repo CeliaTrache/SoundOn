@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     @questions = ['Find the artist !','Find the title !']
     @game = Game.find(params[:id])
     @user = current_user
-    @track = Track.first
+    @track = Track.where(title: "Lovely Day")
     authorize @game
   end
 
@@ -37,7 +37,7 @@ class GamesController < ApplicationController
       player_params[:players_attributes].each_key do |id|
         Player.create(game: @game, nickname: player_params[:players_attributes].values[id.to_i][:nickname])
       end
-      redirect_to game_path(@game)
+      redirect_to playlists_path(game_id: @game.id)
     else
       render :edit
     end

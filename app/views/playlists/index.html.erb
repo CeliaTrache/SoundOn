@@ -10,11 +10,13 @@
 
   <div class="wrapper1 align-items-center">
   <% @playlists.each do |playlist| %>
-    <div class="card-playlist mt-2" style="background-image: url(<%= playlist.image_url%>)"><% link_to '', games_path %>
-      <%= playlist.title.truncate_words(4) %>
-      <% link_to '', games_id_path %>
-    </div>
+
+    <%= link_to game_path(@game) do %>
+      <div class="card-playlist mt-2" style="background-image: url(<%= playlist.image_url%>)">
+        <%= playlist.title.truncate_words(4) %>
+      </div>
+    <% end %>
   <% end %>
-  
+
   </div>
 </div>

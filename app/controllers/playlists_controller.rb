@@ -6,5 +6,6 @@ class PlaylistsController < ApplicationController
     else
       @playlists = policy_scope(Playlist).all
     end
+    @game = Game.find(params[:game_id])
   end
 end
