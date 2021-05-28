@@ -41,7 +41,7 @@ const countdown = () => {
         ></path>
       </g>
     </svg>
-    <span id="base-timer-label" class="base-timer__label">${formatTime(
+    <span id="base-timer-label" class="base-timer__label" style="color: white">${formatTime(
       timeLeft
     )}</span>
   </div>

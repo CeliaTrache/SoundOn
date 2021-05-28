@@ -44,3 +44,19 @@
   grid-auto-rows: minmax(100px, auto);
 }
 
+// solution cards
+
+.card-solution {
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  width: 178px;
+  display: flex;
+  flex-direction : column;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

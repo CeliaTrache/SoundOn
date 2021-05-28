@@ -3,9 +3,11 @@
 
   <div id="app"></div>
 
+
   <button type="button" id="start" class="btn-player"> Start </button>
   <button type="button" id="time" class="btn-player"> Add 15s </button>
-  <%= link_to "Points Allocation", solution_game_path(@game), class: 'btn-player' %>
+  <%= link_to "Points Allocation", solution_game_path(@game), class: 'btn-player ml-0' %>
+
 
   <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track[0].spotify_url %>"></div>
 </div>
