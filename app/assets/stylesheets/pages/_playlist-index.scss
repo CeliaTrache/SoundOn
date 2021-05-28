@@ -61,12 +61,16 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  padding: 0px 1em;
+  a {
+    margin-left: 0px;
+  }
 }
 
 .form-search {
   margin-bottom: 35px;
-  margin-left: 38px;
-  margin-right: 19px;
+  margin-left: 31px;
+  margin-right: 118px;
 }
 
 .error-message {
