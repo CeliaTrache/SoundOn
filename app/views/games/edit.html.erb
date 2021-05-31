@@ -13,7 +13,7 @@
   <% end %>
 
   <div class= "btn-next" data-controller="set-players">
-    <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "my-4 btn-player" %>
+    <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "btn-player" %>
   </div>
 
   <% if @number_of_players %>

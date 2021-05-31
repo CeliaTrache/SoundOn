@@ -16,11 +16,17 @@ class GamesController < ApplicationController
   end
 
   def show
-    @questions = ['Find the artist !','Find the title !']
+    @questions = ['Find the artist !', 'Find the title !']
     @game = Game.find(params[:id])
-    @user = current_user
-    @track = Track.where(title: "Lovely Day")
     authorize @game
+    @user = current_user
+    # @track = Track.where(title: "Lovely Day")
+    tracks_list = TracksList.where(game: @game, played_track: false).first
+    if tracks_list
+      tracks_list.played_track = true
+      tracks_list.save
+      @track = tracks_list.track
+    end
   end
 
   def edit
@@ -46,7 +52,7 @@ class GamesController < ApplicationController
   def solution
     @game = Game.find(params[:id])
     authorize @game
-    @track = Track.where(title: "Lovely Day")
+    @track = Track.find(params[:track_id])
   end
 
   def results

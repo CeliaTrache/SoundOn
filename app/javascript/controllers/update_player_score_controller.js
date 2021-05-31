@@ -7,12 +7,17 @@ export default class extends Controller {
   send(event) {
     event.preventDefault();
     const winner = event.currentTarget;
+    winner.classList.toggle("active")
     const url = winner.href;
+    const score = winner.classList.contains("active") ? +10 : -10;
+    
+    const formData = new FormData();
+    formData.append('score', score)
 
     fetch(url, {
       method: 'PATCH',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-      body: new FormData()
+      body: formData
     })
       .then(response => response.json())
       .then((data) => {
@@ -21,5 +26,3 @@ export default class extends Controller {
       });
   }
 }
-
-

@@ -1,6 +1,7 @@
 require 'rspotify'
 
 Player.delete_all
+TracksList.delete_all
 Game.delete_all
 User.delete_all
 Playlist.delete_all

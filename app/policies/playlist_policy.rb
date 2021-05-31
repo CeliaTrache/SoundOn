@@ -4,4 +4,8 @@ class PlaylistPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create_tracks?
+    return true
+  end
 end
