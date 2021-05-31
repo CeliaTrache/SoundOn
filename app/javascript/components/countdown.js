@@ -49,7 +49,7 @@ const countdown = () => {
 
   // Button ID
   const startLoc = document.getElementById('start')
-  
+
   startLoc.addEventListener('click', (event) => {
     startTimer();
   })

@@ -4,9 +4,9 @@ export default class extends Controller {
 
   send(event) {
     event.preventDefault();
-    const number = document.querySelector('#players-number');
-    console.log(document.querySelector('form'));
-    document.querySelector('#number_of_players').value = number.value;
-    document.querySelector('form').submit();
+    const number = parseInt(document.querySelector('#players-number').innerText);
+    console.log(document.querySelector('.number_of_players_form'));
+    document.querySelector('#number_of_players').value = number;
+    document.querySelector('.number_of_players_form').submit();
   }
 }
