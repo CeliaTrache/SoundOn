@@ -21,8 +21,11 @@ class PlaylistsController < ApplicationController
   end
 
   def create_tracks
-    playlist = Playlist.find(params[:id])
-    tracks = RSpotify::Playlist.find_by_id(playlist.spotify_id, market: nil).tracks
+    @game = Game.find(params[:game_id])
+    @playlist = Playlist.find(params[:id])
+    authorize @playlist
+    tracks_number = @game.duration * 60 / 15
+    tracks = RSpotify::Playlist.find_by_id(@playlist.spotify_id, market: nil).tracks(limit: tracks_number)
     tracks.each do |track|
       title = track.name
       artists = []
@@ -32,11 +35,10 @@ class PlaylistsController < ApplicationController
       duration = track.duration_ms
       uri = track.uri
       id = track.id
-      new_track = Track.create(title: title, artist: artists, duration: duration, spotify_id: id, spotify_url: uri)
-      TracksList.create(track: new_track, game: Game.find(params[:game_id]), played_track: false)
+      new_track = Track.find_or_create_by(title: title, artist: artists, duration: duration, spotify_id: id, spotify_url: uri)
+      TracksList.create(track: new_track, game: @game, played_track: false)
     end
-    raise
-    # redirect_to game_path(Game.find(params[:game_id])
+    redirect_to game_path(@game)
   end
 end
 
