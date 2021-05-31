@@ -11,7 +11,7 @@
   <div class="wrapper1 align-items-center">
     <% @playlists.each do |playlist| %>
 
-      <%= link_to game_path(@game) do %>
+      <%= link_to create_tracks_playlist_path(playlist, game_id: @game.id) do %>
         <div class="card-playlist mt-2" style="background-image: linear-gradient(rgba(0, 0,0,0.2),rgba(0,0,0,0.2)), url(<%= playlist.image_url%>)">
           <%= playlist.title.truncate_words(4) %>
         </div>

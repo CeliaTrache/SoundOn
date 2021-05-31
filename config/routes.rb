@@ -7,7 +7,11 @@ Rails.application.routes.draw do
       get :results
     end
   end
-  resources :playlists, only: [:index]
+  resources :playlists, only: [:index] do
+    member do
+      get :create_tracks
+    end
+  end
   resources :players, only: [:update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

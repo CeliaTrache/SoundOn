@@ -4,4 +4,5 @@ class Game < ApplicationRecord
   validates_associated :players
   accepts_nested_attributes_for :players
   has_many :tacks_lists
+  has_many :tracks, through: :tacks_lists
 end
