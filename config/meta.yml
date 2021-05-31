@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Sound On"
+meta_title: "Sound On - Guess to stay on track"
+meta_description: "Your Blind Test app, to play anywhere, anytime, with anyone."
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
+twitter_account: "@SoundOn_app"   # required for Twitter Cards
