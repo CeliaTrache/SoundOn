@@ -18,4 +18,10 @@
       <% end %>
     <% end %>
   </div>
+<div class="pagination">
+  <%= link_to_prev_page @playlists, '<i class="fas fa-chevron-left chevron"></i>'.html_safe, class: "prev" %>
+  <%= link_to_next_page @playlists, '<i class="fas fa-chevron-right chevron"></i>'.html_safe, class: "next"  %>
+</div>
+
+
 

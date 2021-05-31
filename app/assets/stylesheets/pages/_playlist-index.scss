@@ -69,7 +69,7 @@ h3 {
 
 .form-search {
   margin-bottom: 35px;
-  margin-left: 31px;
+  margin-left: 16px;
   margin-right: 118px;
 }
 
@@ -87,4 +87,26 @@ h3 {
 a:hover {
   text-decoration: none;
 }
+
+// Previous & Next buttons
+
+.pagination {
+  position: fixed; 
+  bottom:10%;
+  width: 70%;
+  a.next {
+    position: absolute;
+    right: 0;
+  }
+  a.prev {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.chevron {
+  font-size: 36px;
+  margin-left: 50px
+}
+
 
