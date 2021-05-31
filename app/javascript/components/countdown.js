@@ -50,7 +50,6 @@ const countdown = () => {
     `;
   }
 
-
   // Button ID
   const startLoc = document.getElementById('start')
 
@@ -68,11 +67,14 @@ const countdown = () => {
     timerInterval = setInterval(() => {
       timePassed = timePassed += 1;
       timeLeft = TIME_LIMIT - timePassed;
-      document.getElementById("base-timer-label").innerHTML = formatTime(
-        timeLeft
-      );
-      setCircleDasharray();
-      setRemainingPathColor(timeLeft);
+      const baseTimerLabel = document.getElementById("base-timer-label");
+      if (baseTimerLabel) {
+        baseTimerLabel.innerHTML = formatTime(
+          timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+      }
 
       // "==" vs "==="
       if (timeLeft == 0) {
