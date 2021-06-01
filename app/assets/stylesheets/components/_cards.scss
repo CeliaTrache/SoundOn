@@ -39,7 +39,6 @@
 }
 
 .score {
-  // font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -48,7 +47,6 @@
 }
 
 .nickname {
-  // font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -57,14 +55,10 @@
 }
 
 #winner {
-  // position: absolute;
   width: 335px;
   height: 84px;
-  // left: 20px;
-  // top: 147px;
   padding: 40px 20px 20px 20px;
   margin-top: 55px;
-
   background: #24202B;
   border-radius: 16px;
 }
@@ -89,16 +83,7 @@
   margin-top: 70px;
   font-size: 30px;
 }
-// .wrapper {
-//   // display: grid;
-//   // grid-template-columns: repeat(2, 1fr);
-//   // grid-gap: 10px;
-//   // grid-auto-rows: minmax(100px, auto);
 
-//   // display: flex;
-//   // flex-direction: column;
-//   // width: 100%;
-// }
 
 /* 🎉 Winner is */
 
@@ -146,14 +131,17 @@
 .card-solution {
   background-size: cover;
   background-position: center;
-  height: 100px;
-  width: 178px;
+  height: 160px;
+  width: 188px;
   display: flex;
   flex-direction : column;
   padding: 8px;
+  margin: 44px;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-  border-radius: 5px;
+  border-radius: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family: 'Montserrat', sans-serif;
+  align-items: center;
 }
