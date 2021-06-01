@@ -1,29 +1,26 @@
 <div class="background-home">
-  <div class="d-flex flex-column align-items-center">
-    <h1>The answer :</h1>
-
-    <div class="card-solution mt-4" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= RSpotify::Track.find(@track.spotify_id).album.images.first['url'] %>)">
+  <div class="d-flex flex-column mx-5">
+    <div class="card-solution" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= RSpotify::Track.find(@track.spotify_id).album.images.first['url'] %>)">
       <h2><%= @track.title.truncate_words(4) %></h2>
       <h3 class="mt-1"><%= @track.artist.tr('"[','').tr(']"','').truncate_words(4) %></h3>
     </div>
 
-    <h3 class="mt-5" style="color: white">Select the winner</h3>
+    <h3 class="title-winner mt-2">Select winner(s)</h3>
     <div class="margin" data-controller="update-player-score">
         <% @game.players.each do |player| %>
-            <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "mt-5 btn-player player d-flex justify-content-between" do %>
-            <div><%= player.nickname %></div>
-            <div>•</div>
-            <div id="score"><%= player.score || "0 pt" %></div>
-            <%= "pts" if player.score %>
+            <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "player-name" do %>
+            <div class="player-name"><%= player.nickname %></div>
             <% end%>
         <% end %>
     </div>
 
-    <div class= "margin mt-5">
-      <%= link_to "Next song", game_path(@game), class: "btn-player" %>
+    <div class= "margin">
+      <%= link_to "Add points 👉", game_path(@game), class: "violet-button" %>
     </div>
-    <div class= "margin mt-5">
-      <%= link_to "Go to results", results_game_path(@game), class: "btn-player" %>
-    </div>
+    <%# <div class= "margin mt-5"> %>
+      <%# <#%= link_to "Go to results", results_game_path(@game), class: "btn-player" %>
+    <%# </div> %>
   </div>
 </div>
+
+ 
