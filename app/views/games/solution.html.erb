@@ -8,20 +8,19 @@
     <h3 class="title-winner mt-2">Select winner(s)</h3>
     <div class="margin" data-controller="update-player-score">
         <% @game.players.each do |player| %>
-            <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "mt-5 rank player d-flex justify-content-between" do %>
-            <div class="nickname"><%= player.nickname %></div>
-            <div>•</div>
-            <div id="score"><%= player.score || "0 pt" %></div>
-            <%= "pts" if player.score %>
+            <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "player-name" do %>
+            <div class="player-name"><%= player.nickname %></div>
             <% end%>
         <% end %>
     </div>
 
-    <div class= "margin mt-5">
-      <%= link_to "Next song", game_path(@game), class: "btn-player" %>
+    <div class= "margin">
+      <%= link_to "Add points 👉", game_path(@game), class: "violet-button" %>
     </div>
-    <div class= "margin mt-5">
-      <%= link_to "Go to results", results_game_path(@game), class: "btn-player" %>
-    </div>
+    <%# <div class= "margin mt-5"> %>
+      <%# <#%= link_to "Go to results", results_game_path(@game), class: "btn-player" %>
+    <%# </div> %>
   </div>
 </div>
+
+ 
