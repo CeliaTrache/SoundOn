@@ -1,3 +1,3 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
-//= link manifest.json.erb
+//= link manifest.json
