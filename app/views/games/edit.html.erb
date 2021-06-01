@@ -1,6 +1,10 @@
 <div class="background-pages edit d-flex flex-column align-items-center">
+  <% if params[:number_of_players].present? %>
+    <h1 class="title">Enter the <strong>names of the players</strong></h1>
+  <% else %>
+    <h1 class="title">Choose the <strong>number of players</strong></h1>
+  <% end %>
 
-  <h1>Players</h1>
   <%= render "shared/players_input" %>
 
   <%= form_tag edit_game_path(@game), method: :get, data_controller: "set_players_controller", class: "number_of_players_form", style: "display:none;" do %>
@@ -12,8 +16,9 @@
     <%= submit_tag "Set players", class: "btn btn-primary" %>
   <% end %>
 
-  <div class= "btn-next" data-controller="set-players">
-    <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "btn-player" %>
+
+  <div class=<%= @number_of_players ? "d-none" : "btn-next"%> data-controller="set-players" id="first-btn-next">
+    <%= link_to "Next", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "violet-button" %>
   </div>
 
   <% if @number_of_players %>
@@ -22,11 +27,11 @@
         <%# <%= p.input :nickname, label: 'Player name', as: :string, required: true %>
       <%# <% end %>
       <% @number_of_players.times do |i| %>
-        <input class="form-control string required game-players mb-2" required="required" aria-required="true" type="text" value="" name="game[players_attributes][<%= i %>][nickname]" id="game_players_attributes_<%= i %>_nickname">
+        <input class="form-control string required game-players mb-2" required="required" aria-required="true" type="text" value="" name="game[players_attributes][<%= i %>][nickname]" id="game_players_attributes_<%= i %>_nickname" placeholder="Gamer <%= i + 1 %>">
         <% i += 1 %>
       <% end %>
       <div class="d-flex flex-column align-items-center">
-        <%= f.button :submit, "Play", class: "btn-player" %>
+        <%= f.button :submit, "Next", class: "violet-button" %>
       </div>
     <% end %>
   <% end %>

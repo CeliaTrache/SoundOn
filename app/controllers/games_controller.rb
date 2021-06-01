@@ -16,7 +16,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @questions = ['Find the artist !', 'Find the title !']
+    @questions = ['artist', 'title']
     @game = Game.find(params[:id])
     authorize @game
     @user = current_user
@@ -59,6 +59,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     authorize @game
     @players = @game.players
+    @players = @players.as_json.sort! { |a, b| a[:score] <=> b[:score] }.reverse
   end
 
   private

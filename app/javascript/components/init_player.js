@@ -19,107 +19,101 @@ const play = ({
   });
 };
 
+const startPlayer = () => {
+  let tokenLoc = document.getElementById('player');
+  //INITIALIZATION
+  if (tokenLoc) {
+    let token = tokenLoc.dataset.token;
+  
+    // Buttons identifications
+    const stopLoc = document.getElementById('stop')
+    const addTime = document.getElementById('time')
+    
+    // Define Spotify Player
+    window.SpotifyPlayer = new Spotify.Player({
+      name: 'Blindtest Player',
+      getOAuthToken: callback => {
+        // Run code to get a fresh access token
+        callback(token);
+      },
+    });
+    
+    // Connecting our Spotify Player to Spotify
+    window.SpotifyPlayer.connect().then(success => {
+      if (success) {
+        console.log('The Web Playback SDK successfully connected to Spotify!');
+      }
+    });
+    
+    // Collecting the device Id
+    window.SpotifyPlayer.addListener('ready', ({ device_id }) => {
+      window.deviceId = device_id
+    })
+  };
+}
+
+const startTrack = () => {
+  let tokenLoc = document.getElementById('player');
+  if (tokenLoc) {
+    let token = tokenLoc.dataset.token;
+    const startLoc = document.getElementById('start');
+    startLoc.addEventListener('click', (event) => {
+      let track = tokenLoc.dataset.trackId;
+      // Play track
+      setTimeout(() => {
+        play({
+          playerInstance: window.SpotifyPlayer,
+          spotify_uri: track,
+          device_id: window.deviceId
+        })
+      }, 1000); // 1s for now but maybe 3-4s depending on (3,2,1) countdown feature
+      
+      // Initialize timer
+      let timer = 15000;
+      // Pausing track after timer
+      setTimeout(function () {
+        window.SpotifyPlayer.pause().then(() => {
+          window.SpotifyPlayer.disconnect().then(() => {
+          });
+        })}, timer)
+    });
+  }
+}
+
+const pauseTrack = () => {
+}
+
 
 const initPlayer = () => {
   window.onSpotifyWebPlaybackSDKReady = () => {
-    // You can now initialize Spotify.Player and use the SDK
-    // Retrieve token
-    const tokenLoc = document.getElementById('player');
-    if (tokenLoc) {
-      let token = tokenLoc.dataset.token;
-      // console.log(token);
-      // Retrieve track uri
-      // console.log(track)
-      // Buttons identifications
-      const startLoc = document.getElementById('start')
-      const stopLoc = document.getElementById('stop')
-      const addTime = document.getElementById('time')
-      let timer = 15000
+    startPlayer();
+    startTrack();
 
-      // Define Spotify Player
-      let player = new Spotify.Player({
-        name: 'Blindtest Player',
-        getOAuthToken: callback => {
-          // Run code to get a fresh access token
-          callback(token);
-        },
-      });
-
-      // Error handling
-      player.addListener('initialization_error', ({ message }) => { console.error(message); });
-      player.addListener('authentication_error', ({ message }) => { console.error(message); });
-      player.addListener('account_error', ({ message }) => { console.error(message); });
-      player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-      // Playback status updates
-      player.addListener('player_state_changed', state => { console.log(state); });
-
-      if (startLoc) {
-        startLoc.addEventListener('click', (event) => {
-          //1. afficher le 3,2,1 dans le dom
-          const app = document.getElementById("app");
-          const countdownStarter = document.getElementById("countdown_starter");
-          const startbtn = document.getElementById("start");
-          countdownStarter.style.display = "block";
-          startbtn.style.display = "none";
-          //2. attendre 5secondes pour enlevé countdown_starter + afficher id app(décompte)
-          setTimeout(() => {
-            countdownStarter.style.display = "none";
-            app.style.display = "block";
-            /// RESTE DU CODE
-          }, 4500);
-          //3.
-          console.log("ok");
-          player.connect().then(success => {
-            if (success) {
-              console.log('The Web Playback SDK successfully connected to Spotify!');
-            }
-          });
-          player.addListener('ready', ({ device_id }) => {
-            console.log('The Web Playback SDK is ready to play music!');
-            console.log('Device ID', device_id);
-            let track = tokenLoc.dataset.trackId;
-            console.log(track)
-
-            play({
-              playerInstance: player,
-              spotify_uri: track,
-              device_id: device_id
-            })
-
-
-
-            // In progress : trying to add 15 seconds
-            addTime.addEventListener('click', (event) => {
-              player.addListener('player_state_changed', ({
-                position,
-                duration,
-                track_window: { current_track }
-              }) => {
-                console.log('Currently Playing', current_track);
-                console.log('Position in Song', position);
-                console.log('Duration of Song', duration);
-              });
-              timer = timer + 15000;
-              console.log('time increased');
-              console.log(timer)
-            })
-          });
-          setTimeout(function(){player.pause().then(() => {
-            console.log(timer);
-            console.log('Paused!');
-            player.disconnect().then(() => {
-              console.log('DECONNECTEEE!');
-              Turbolinks.clearCache()
-            });
-          })}, timer)
-        })
-      }
-    }
-
-
+      // In progress : trying to add 15 seconds
+      // addTime.addEventListener('click', (event) => {
+      //   window.SpotifyPlayer.addListener('player_state_changed', ({
+      //     position,
+      //     duration,
+      //     track_window: { current_track }
+      //   }) => {
+      //     console.log('Currently Playing', current_track);
+      //     console.log('Position in Song', position);
+      //     console.log('Duration of Song', duration);
+      //   });
+      //   timer = timer + 15000;
+      //   console.log('time increased');
+      //   console.log(timer)
+      // });
+      // setTimeout(function () {
+      //   window.SpotifyPlayer.pause().then(() => {
+      //   console.log(timer);
+      //   console.log('Paused!');
+      //   window.SpotifyPlayer.disconnect().then(() => {
+      //     console.log('DECONNECTEEE!');
+      //   });
+      // })}, timer)
   };
-}
+};
 
 export { initPlayer };
 

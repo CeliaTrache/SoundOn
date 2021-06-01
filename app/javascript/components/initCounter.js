@@ -4,24 +4,27 @@ const initCounter = () => {
   let counterPlusElem = document.querySelector('.counter-plus');
   let count = 0;
 
-  if(counterDisplayElem) {
-
-    updateDisplay();
-
+  if (counterPlusElem) {
     counterPlusElem.addEventListener("click", () => {
       count++;
       updateDisplay();
     });
+  }
 
+  if (counterMinusElem) {
     counterMinusElem.addEventListener("click", () => {
       count--;
       updateDisplay();
     });
-
-    function updateDisplay() {
-      counterDisplayElem.innerHTML = count;
-    };
   }
+
+  function updateDisplay() {
+    if (counterDisplayElem.innerHTML) {
+      counterDisplayElem.innerHTML = count;
+    }
+  };
 }
+export { initCounter };
+
 
 export { initCounter };

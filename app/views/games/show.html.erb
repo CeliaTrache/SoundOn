@@ -4,7 +4,7 @@
 
 <div class="d-flex flex-column align-items-center">
   <% if @track %>
-    <h1 class="mb-4"><%= @questions.sample %></h1>
+    <h1 class="title">Find the <strong style="color:#E359F9"><%= @questions.sample %></strong>!</h1>
 
     <div id="app" class="mb-4" style="display: none;"></div>
     <div class="demo" id="countdown_starter" style="display: none;">
@@ -37,8 +37,8 @@
     </div>
 
     <button type="button" id="start" class="btn-player mb-4"> Start </button>
-    <button type="button" id="time" class="btn-player mb-4"> Add 15s </button>
-    <%= link_to "Points Allocation", solution_game_path(@game, track_id: @track.id), class: 'btn-player ml-0', data: { turbo: "false" } %>
+    <%# <button type="button" id="time" class="btn-player mb-4"> Add 15s </button> %>
+    <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', data: { turbo: "false" } %>
 
     <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
   <% else %>

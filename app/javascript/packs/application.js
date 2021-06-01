@@ -39,9 +39,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initPlayer();
   initSlider();
-  initCounter();
   countdown();
   logo();
+  initCounter();
 });
 
 import "controllers"
