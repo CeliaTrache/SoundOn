@@ -1,20 +1,33 @@
-<div class="background-pages results d-flex flex-column align-items-center">
-  <h1>Blind Test is over!</h1>
+<div class="d-flex flex-column align-items-center">
+  <h1 id="blind-test-over">Blind Test is over !</h1>
 
-  <h2 class="my-5">Score recap</h2>
 
 
   <div class="wrapper">
-    <% @game.players.each do |player| %>
-      <div class="card-score" >
-        <p><%= "#{player.nickname.capitalize}" %></p>
-        <p class="score"><%= "#{player.score || "0"} #{"pts" if player.score}" %></p>
+    <div class="card-score" id="winner" >
+      <p class="winner-is">🎉 Winner is</p>
+      <div class= "rank-nickname">
+        <p class="rank">1</p>
+        <p class="nickname"><%= "#{@players.first['nickname'].capitalize}" %></p>
       </div>
+      <p class="score"><%= "#{@players.first['score'] || "0"}" %></p>
+    </div>
+
+    <% @players.each_with_index do |player, index| %>
+      <% if index > 0 %>
+        <div class="card-score" >
+          <div class= "rank-nickname">
+            <p class="rank"><%= index + 1 %></p>
+            <p class="nickname"><%= "#{player['nickname'].capitalize}" %></p>
+          </div>
+          <p class="score"><%= "#{player['score'] || "0"}" %></p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
-  <div class= "mt-5">
-    <%= link_to "Play again", "/", class: "btn-player" %>
+  <div>
+    <%= link_to "Play again 🚀", "/", class: "violet-button" %>
   </div>
 
 </div>
