@@ -1,9 +1,9 @@
 // duration and player slider
 $main__color: #E94560;
 $text__color: #16213E;
-$range__size: 186px;
+$range__size: 238px;
 $range__width: 10px;
-$dial__size: 26px;
+$dial__size: 28px;
 
 .range {
   border-radius: 50%;
@@ -11,6 +11,7 @@ $dial__size: 26px;
   height: $range__size;
   position: relative;
   width: $range__size;
+  top: 160px;
 
   input {
     opacity: 0;
@@ -18,7 +19,9 @@ $dial__size: 26px;
   }
 
   .dial {
-    background-color: #FFF;
+    background: #9F9F9F;
+    border: 5px solid #24202B;
+    box-sizing: border-box;
     border-radius: 50%;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, .1);
     cursor: pointer;
@@ -34,10 +37,10 @@ $dial__size: 26px;
     }
   }
   .info {
-    background-color: #FFF;
+    background-color: #1A1720;
     border-radius: 50%;
     bottom: $range__width;
-    color: $text__color;
+    color:  #F1F1F1;
     cursor: default;
     display: table-cell;
     font: 400 16px/1.1 'Lato', sans-serif;
@@ -48,20 +51,24 @@ $dial__size: 26px;
     text-align: center;
     top: $range__width;
     user-select: none;
-    text-transform: uppercase;
-    z-index: 30
-  }
-  .count {
-    color: $main__color;
-    display: block;
-    font-size: 50px;
-    font-weight: 700
+    z-index: 30;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 26px;
+    //line-height: 32px;
+    font-weight: light;
+      .count {
+        color:  #F1F1F1;
+        display: block;
+        font-size: 66px;  
+        font-weight: 700
+      }
   }
 }
 
 .slice {
   border-radius: $range__size 0 0 $range__size;
-  background-color: $main__color;
+  background: linear-gradient( #E359F9, #5F2EEA);
+  // background-color: $main__color;
   height: 100%;
   overflow: hidden;
   position: absolute;
@@ -78,7 +85,7 @@ $dial__size: 26px;
     }
   }
   .blocker {
-    background-color: #eee;
+    background-color: #24202B;
     height: 200%;
     position: absolute;
     right: 0;
@@ -86,3 +93,4 @@ $dial__size: 26px;
     width: 200%
   }
 }
+

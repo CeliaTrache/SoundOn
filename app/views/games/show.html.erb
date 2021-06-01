@@ -38,7 +38,7 @@
 
     <button type="button" id="start" class="btn-player mb-4"> Start </button>
     <button type="button" id="time" class="btn-player mb-4"> Add 15s </button>
-    <%= link_to "Points Allocation", solution_game_path(@game, track_id: @track.id), class: 'btn-player ml-0' %>
+    <%= link_to "Points Allocation", solution_game_path(@game, track_id: @track.id), class: 'btn-player ml-0', data: { turbo: "false" } %>
 
     <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
   <% else %>

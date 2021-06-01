@@ -1,9 +1,9 @@
 <div class="background-pages edit d-flex flex-column align-items-center">
 
   <h1>Players</h1>
-  <%= render "shared/players_slider" %>
+  <%= render "shared/players_input" %>
 
-  <%= form_tag edit_game_path(@game), method: :get, style: "display:none;" do %>
+  <%= form_tag edit_game_path(@game), method: :get, data_controller: "set_players_controller", class: "number_of_players_form", style: "display:none;" do %>
     <%= number_field_tag :number_of_players,
       params[:number_of_players],
       class: "form-control",
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class= "btn-next" data-controller="set-players">
-    <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "my-4 btn-player" %>
+    <%= link_to "Add Players", games_path, data: { action: 'click->set-players#send', turbo: false}, class: "btn-player" %>
   </div>
 
   <% if @number_of_players %>
