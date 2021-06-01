@@ -4,14 +4,13 @@ const initCounter = () => {
   let counterPlusElem = document.querySelector('.counter-plus');
   let count = 0;
 
-  // updateDisplay();
   if (counterPlusElem) {
     counterPlusElem.addEventListener("click", () => {
       count++;
       updateDisplay();
     });
   }
- 
+
   if (counterMinusElem) {
     counterMinusElem.addEventListener("click", () => {
       count--;

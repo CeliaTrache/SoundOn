@@ -1,8 +1,18 @@
 <div class="container">
   <div id="outer">
-    <button class="counter-minus">-</button>
-    <h1 class="counter-display" id="players-number">0</h1>
-    <button class="counter-plus">+</button>
+    <% if @number_of_players.nil? %>
+      <button class="counter-minus">-</button>
+    <% end %>
+    <h1 class="counter-display" id="players-number">
+      <% if @number_of_players %>
+        <%= @number_of_players %>
+      <% else %>
+        0
+      <% end %>
+    </h1>
+    <% if @number_of_players.nil? %>
+      <button class="counter-plus">+</button>
+    <% end %>
   </div>
 </div>
 
