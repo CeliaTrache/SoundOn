@@ -43,9 +43,9 @@ const countdown = () => {
           ></path>
         </g>
       </svg>
-      <span id="base-timer-label" class="base-timer__label" style="color: white">${formatTime(
+      <span id="base-timer-label" class="base-timer__label" style="color: white"><strong>${formatTime(
         timeLeft
-      )}</span>
+      )}</strong></span>
     </div>
     `;
   }
@@ -84,14 +84,14 @@ const countdown = () => {
   }
 
   function formatTime(time) {
-    const minutes = Math.floor(time / 60);
+    // const minutes = Math.floor(time / 60);
     let seconds = time % 60;
 
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
+    // if (seconds < 10) {
+    //   seconds = `${seconds}`;
+    // }
 
-    return `${minutes}:${seconds}`;
+    return `${seconds}`;
   }
 
   function setRemainingPathColor(timeLeft) {
