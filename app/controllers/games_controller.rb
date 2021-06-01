@@ -16,7 +16,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @questions = ['Find the artist !', 'Find the title !']
+    @questions = ['artist', 'title']
     @game = Game.find(params[:id])
     authorize @game
     @user = current_user

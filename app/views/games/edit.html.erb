@@ -1,6 +1,10 @@
 <div class="background-pages edit d-flex flex-column align-items-center">
+  <% if params[:number_of_players].present? %>
+    <h1 class="title">Enter the <strong>names of the players</strong></h1>
+  <% else %>
+    <h1 class="title">Choose the <strong>number of players</strong></h1>
+  <% end %>
 
-  <h1>Players</h1>
   <%= render "shared/players_input" %>
 
   <%= form_tag edit_game_path(@game), method: :get, data_controller: "set_players_controller", class: "number_of_players_form", style: "display:none;" do %>
