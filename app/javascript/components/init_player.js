@@ -56,6 +56,18 @@ const initPlayer = () => {
 
       if (startLoc) {
         startLoc.addEventListener('click', (event) => {
+          //1. afficher le 3,2,1 dans le dom
+          const app = document.getElementById("app");
+          const countdownStarter = document.getElementById("countdown_starter");
+          const startbtn = document.getElementById("start");
+          countdownStarter.style.display = "block";
+          startbtn.style.display = "none";
+          //2. attendre 5secondes pour enlevé countdown_starter + afficher id app(décompte)
+          setTimeout(() => {
+            countdownStarter.style.display = "none";
+            app.style.display = "block";
+          }, 4500);
+          //3.
           console.log("ok");
           player.connect().then(success => {
             if (success) {
