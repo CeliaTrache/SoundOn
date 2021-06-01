@@ -4,20 +4,22 @@ const initCounter = () => {
   let counterPlusElem = document.querySelector('.counter-plus');
   let count = 0;
 
-  updateDisplay();
-
-  counterPlusElem.addEventListener("click", () => {
-    count++;
-    updateDisplay();
-  });
-
-  counterMinusElem.addEventListener("click", () => {
-    count--;
-    updateDisplay();
-  });
-
+  if (counterPlusElem) {
+    counterPlusElem.addEventListener("click", () => {
+      count++;
+      updateDisplay();
+    });
+  }
+  if (counterMinusElem) {
+    counterMinusElem.addEventListener("click", () => {
+      count--;
+      updateDisplay();
+    });
+  }
   function updateDisplay() {
-    counterDisplayElem.innerHTML = count;
+    if (counterDisplayElem.innerHTML) {
+      counterDisplayElem.innerHTML = count;
+    }
   };
 }
 export { initCounter };
