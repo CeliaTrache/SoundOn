@@ -22,31 +22,123 @@
 // score cards
 
 .card-score {
-  // background-color: rgba(15, 52, 96, 0.6);
-  background-color: rgba(233, 69, 96, 0.6);
-  height: 100px;
-  width: 160px;
-  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(37, 33, 44);
+  height: 64px;
+  width: 335px;
+  margin: 16px auto;
+  padding: 20px;
   color: white;
   font-size: 16px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   flex-wrap: wrap;
-  p {
-    margin-left: 12px;
-  }
-  .score {
-    font-size: 20px;
-  }
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+.score {
+  // font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.75px;
+}
+
+.nickname {
+  // font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.75px;
+}
+
+#winner {
+  // position: absolute;
+  width: 335px;
+  height: 84px;
+  // left: 20px;
+  // top: 147px;
+  padding: 40px 20px 20px 20px;
+  margin-top: 55px;
+
+  background: #24202B;
+  border-radius: 16px;
+}
+
+.rank {
+  background-color: rgb(59, 51, 77);
+  color: #C19CFC;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  padding: 4px 12px 4px 11px;
+  margin-right: 8px;
+
+}
+
+.rank-nickname {
+  display: flex;
+  justify-content: space-between;
+}
+
+#blind-test-over {
+  margin-top: 70px;
+  font-size: 30px;
+}
+// .wrapper {
+//   // display: grid;
+//   // grid-template-columns: repeat(2, 1fr);
+//   // grid-gap: 10px;
+//   // grid-auto-rows: minmax(100px, auto);
+
+//   // display: flex;
+//   // flex-direction: column;
+//   // width: 100%;
+// }
+
+/* 🎉 Winner is */
+
+.winner-is {
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+
+  position: absolute;
+  width: 114px;
+  height: 40px;
+  left: 131px;
+  top: 147px;
+
+  background: #3B324C;
+  border-radius: 20px;
+
+
+  // font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  /* identical to box height, or 160% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.75px;
+  color: #C19CFC;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 0px;
 }
 
 // solution cards

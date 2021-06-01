@@ -38,8 +38,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initPlayer();
   initSlider();
-  initCounter();
   countdown();
+  initCounter();
 });
 
 import "controllers"

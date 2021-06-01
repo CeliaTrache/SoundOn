@@ -10,12 +10,14 @@ const initCounter = () => {
       updateDisplay();
     });
   }
+
   if (counterMinusElem) {
     counterMinusElem.addEventListener("click", () => {
       count--;
       updateDisplay();
     });
   }
+
   function updateDisplay() {
     if (counterDisplayElem.innerHTML) {
       counterDisplayElem.innerHTML = count;
