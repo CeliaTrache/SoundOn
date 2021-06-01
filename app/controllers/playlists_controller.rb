@@ -14,9 +14,9 @@ class PlaylistsController < ApplicationController
           Playlist.create(title: title, songs_number: number_of_songs, description: description, image_url: image, spotify_id: spotify_id)
         end
       end
-      @playlists = policy_scope(Playlist).search_playlist(params[:query]).page params[:page]
+      @playlists = policy_scope(Playlist).search_playlist(params[:query])
     else
-      @playlists = policy_scope(Playlist).page params[:page]
+      @playlists = policy_scope(Playlist).all
     end
   end
 
