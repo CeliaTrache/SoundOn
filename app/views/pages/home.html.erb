@@ -1,21 +1,28 @@
-
-<div class="background-home">
-  <div class="container justify-content-center">
-    <div class="soundon">SOUND
-    <%# </div>
-    <div class="soundon-chrono"> %>
-      <img src="<%=image_path "chrono.png"%>">N
-    </div>
-    <div class="start-blindtest">
-    <h2>Guess to stay on track!</h2>
-    </div>
-    <%= link_to new_game_path do %>
-      <div class="start-button" >
-        <img src="<%=image_path "Start-button-red2.png"%>">
+<div class="background" id="logo" style= "display: block">
+<img src="<%=image_path "Logo_sound_On.png"%>">
+</div>
+  <div class="background-home" id="background" style= "display: none">
+    <div class="container justify-content-center">
+      <div class="soundon" id="soundon">
+      <% if user_signed_in? %>
+        <h5 style="padding-top: 21px;">Hello again Célia ! </h5>
+      <% else %>
+      <div class="space">
+        <h6 style="padding-top: 21px;">Welcome to SOUND ON ! </h6>
       </div>
-    <%end%>
-    <div class="d-flex justify-content-center">
-    <%= link_to "sign in with spotify", user_spotify_omniauth_authorize_path, class: "btn btn-spotify" %>
+      <% end %>
+        <h6 style="padding-bottom: 40px;">Guess to stay on track ! 🚀</h6>
+        <div class="sound-on-center">
+          <h2 style="padding-top: 97px; font-weight: bold;">Let's play a game</h2>
+            <div class="start-button" >   
+            <%= link_to (user_signed_in? ? new_game_path : user_spotify_omniauth_authorize_path) do %>
+              <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px">
+            <% end %>
+            </div>
+        </div>
+         <div class="d-flex justify-content-center" id="spotify" style="padding-top: 38px; padding-right: 37px">
+      <%= link_to "Login with another account", user_spotify_omniauth_authorize_path, class: "btn btn-spotify" %>
+      </div>
+      </div>
     </div>
   </div>
-</div>

@@ -13,36 +13,45 @@
 
 .soundon {
   font-family:'Montserrat', 'cursive';
-  font-style: oblique;
   font-weight: bold;
-  font-size: 69px;
+  font-size: 30px;
   text-align: center;
   color: white;
-  padding-top: 36px;
 }
+
 
 .soundon-chrono {
   font-family: 'Montserrat', 'cursive';
   font-style: oblique;
   font-weight: bold;
-  font-size: 69px;
+  font-size: 30px;
   text-align: center;
   color: white;
 }
-.start-blindtest{
-  font-size: 57px;
-  display: block;
-  text-align: center;
-  color: white;
-  margin-top: 22px;
+
+
+.space {
+  margin-bottom: 0.2rem;
+  padding-right: 95px;
 }
 
 .btn-white {
   position: relative;
 }
 
-.start-button {
-  margin-left: 100px;
-  margin-top: -195px;
-  position: absolute;
+h6 {
+font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 92px;
+  }
+
+
+.sound-on-center {
+  background-color: #24202A;
+  border-radius: 8px;
+  padding-bottom: 32px;
 }
