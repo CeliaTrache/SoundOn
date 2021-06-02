@@ -7,11 +7,14 @@ const logo = () => {
     const logo = document.getElementById("logo");
 
 setTimeout(function(){
-      logo.style.display = "none";
-      soundon.style.display = "block";
+  if (logo && soundon && spotify && background) {
+    logo.style.display = "none";
+    soundon.style.display = "block";
 
-      spotify.style.display = "block";
-      background.style.display = "block";
-    }, 2500);
+    spotify.style.display = "block";
+    background.style.display = "block";
+  }
+  }, 2500);
 }
-    export { logo };
+
+export { logo };
