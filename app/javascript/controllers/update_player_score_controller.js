@@ -10,7 +10,8 @@ export default class extends Controller {
     winner.classList.toggle("active")
     const url = winner.href;
     const score = winner.classList.contains("active") ? +10 : -10;
-    
+    const border = winner.classList.toggle("player-name-active");
+
     const formData = new FormData();
     formData.append('score', score)
 
