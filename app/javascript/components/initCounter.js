@@ -25,6 +25,3 @@ const initCounter = () => {
   };
 }
 export { initCounter };
-
-
-export { initCounter };
