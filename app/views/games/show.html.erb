@@ -36,8 +36,10 @@
       </svg>  
       </div>
     </div>
-
-    <button type="button" id="start" class="btn-player mb-4"> Start </button>
+  
+    <button type="button" id="start" style="background-color: transparent; border: none"> 
+      <img src="<%=image_path "play-btn.svg"%>">
+    </button>
     <%# <button type="button" id="time" class="btn-player mb-4"> Add 15s </button> %>
     <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', data: { turbo: "false" } %>
 
