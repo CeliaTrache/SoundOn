@@ -11,6 +11,7 @@
     <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', data: { turbo: "false" } %>
 
     <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
+    <audio src="" autoplay></audio>
   <% else %>
     <div class= "margin mt-5">
       <h1 class="mb-4">Your Blind Test is over ...</h1>
