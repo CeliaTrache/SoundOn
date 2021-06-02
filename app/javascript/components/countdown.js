@@ -1,3 +1,5 @@
+import { countdown_before_music } from './countdown_before_music';
+
 const countdown = () => {
   const FULL_DASH_ARRAY = 283;
   const WARNING_THRESHOLD = 10;
@@ -55,7 +57,9 @@ const countdown = () => {
 
   if (startLoc) {
     startLoc.addEventListener('click', (event) => {
-      startTimer();
+      setTimeout(() => {
+        startTimer();
+      }, 4750);
     })
   }
 
