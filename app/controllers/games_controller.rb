@@ -26,6 +26,9 @@ class GamesController < ApplicationController
       tracks_list.played_track = true
       tracks_list.save
       @track = tracks_list.track
+      if @track.nil?
+        redirect_to results_game_path(@game)
+      end
     end
   end
 
