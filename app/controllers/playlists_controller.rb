@@ -1,6 +1,7 @@
 class PlaylistsController < ApplicationController
   def index
     @game = Game.find(params[:game_id])
+    divan_du_monde = Playlist.find_by(title: "Mon divan du monde")
     if params[:query].present?
       search = FetchPlaylist.new
       dynamic_search = search.get_playlist(params[:query])
@@ -14,9 +15,9 @@ class PlaylistsController < ApplicationController
           Playlist.create(title: title, songs_number: number_of_songs, description: description, image_url: image, spotify_id: spotify_id)
         end
       end
-      @playlists = policy_scope(Playlist).search_playlist(params[:query])
+      @playlists = policy_scope(Playlist).order(:id).search_playlist(params[:query])
     else
-      @playlists = policy_scope(Playlist).all
+      @playlists = policy_scope(Playlist).select{|playlist| playlist.title != divan_du_monde.title}
     end
   end
 

@@ -7,7 +7,7 @@ User.delete_all
 Playlist.delete_all
 Track.delete_all
 
-celia = User.create(first_name: "Celia", last_name: "Trache", email: "celiatrache@gmail.com", password: "azerfvbnjklo")
+celia = User.create(first_name: "Celia", last_name: "Trache", email: "celiatrache@gmail.com", password: "azerfvbnjklo", spotify_token: "2wy1zc7i34ghbcm3buhp8v9gc")
 
 
 RSpotify.authenticate(ENV["CLIENT_ID"], ENV["CLIENT_SECRET"])
@@ -19,18 +19,19 @@ keywords.each do |keyword|
   playlists << playlist
 end
 
+playlists << FetchPlaylist.new.fetch_playlist(celia, "4XqVLg2DwRuu9jzSEjqTCX")
+
+
 puts "Launching playlists & tracks load"
 
-playlists.each do |array|
-  array.each do |playlist|
-    title = playlist.name
-    description = playlist.description
-    image = playlist.images[0]["url"]
-    number_of_songs = playlist.total
-    spotify_id = playlist.id
-    new_playlist = Playlist.create(title: title, songs_number: number_of_songs, description: description, image_url: image, spotify_id: spotify_id)
-    puts "Playlist '#{playlist.name}' created successfully !"
-  end
+playlists.flatten.each do |playlist|
+  title = playlist.name
+  description = playlist.description
+  image = playlist.images[0]["url"]
+  number_of_songs = playlist.total
+  spotify_id = playlist.id
+  new_playlist = Playlist.create(title: title, songs_number: number_of_songs, description: description, image_url: image, spotify_id: spotify_id)
+  puts "Playlist '#{playlist.name}' created successfully !"
 end
 
 funk_playlist = playlists[0]
