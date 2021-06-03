@@ -20,7 +20,10 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     authorize @game
     @user = current_user
-    # @track = Track.where(title: "Lovely Day")
+    boolean_array = TracksList.where(game: @game).map do |track|
+      track.played_track
+    end
+    @track_already_played = boolean_array.include?(true)
     tracks_list = TracksList.where(game: @game, played_track: false).first
     if tracks_list
       tracks_list.played_track = true
