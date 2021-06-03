@@ -80,10 +80,10 @@ const startTrack = () => {
           spotify_uri: track,
           device_id: window.deviceId
         })
-      }, 1000); // 1s for now but maybe 3-4s depending on (3,2,1) countdown feature
+      }, 4750); // 1s for now but maybe 3-4s depending on (3,2,1) countdown feature
 
       // Initialize timer
-      let timer = 15000;
+      let timer = 19750;
       // Pausing track after timer
       setTimeout(function () {
         window.SpotifyPlayer.disconnect().then(() => {
