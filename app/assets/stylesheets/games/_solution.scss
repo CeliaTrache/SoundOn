@@ -14,7 +14,7 @@ h3 {
 .title-winner {
   color: white;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .player-name {
@@ -29,15 +29,15 @@ h3 {
   padding-left: 8px;
   padding-right: 8px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 0.75px;
   line-height: 24px;
-  margin-bottom: 20px;
-  padding:5px
+  padding: 6px 25px;
+  margin-bottom: 10px;
 }
 
 .player-name-active {
-  background-color: #24202B;
+  background-color: #E158F9;
   color: white;
   width: 340px;
   border-radius: 12px;
@@ -48,15 +48,31 @@ h3 {
   padding-left: 8px;
   padding-right: 8px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 0.75px;
   line-height: 24px;
-  border: 1px solid #C19CFC;
-  margin-bottom: 20px;
-  padding:5px
+  //outline: 3px solid #E158F9;
+  padding: 6px 25px;
+  margin-bottom: 10px;
 }
 
-h6 {
+.player-name-active .player-name {
+  background-color: #E158F9;
+}
+
+
+#score {
   color: #C19CFC;
-  font-size: 16px;
+  font-size: 20px;
+  margin-bottom: 0px;
+  background-color: rgb(59, 51, 77);
+  color: #C19CFC;
+  //height: 32px;
+  // width: 32px;
+  border-radius: 50%;
+  padding: 7px 7px;
+}
+
+.no-margin {
+  margin-bottom: 0px;
 }

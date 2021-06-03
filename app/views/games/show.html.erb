@@ -2,11 +2,11 @@
   <% if !@track_already_played %>
     <p id="p1" style= "color:white">Your setup is complete !</p>
   <div id="detail_setup">
-    <p id="p1" style= "color:white"><i class="fas fa-history" style= "color:#C19CFC"></i>  <%= @game.duration%> minutes</p>
+    <p id="p1" style= "color:white"><i class="fas fa-history" style= "color:#C19CFC"></i>  <%= pluralize@game.duration, "minute"%></p>
     <p id="p1" style= "color:white"><i class="fas fa-music"style= "color:#C19CFC"></i>  <%=@game.playlist_title%></p>
     <p id="p1" style= "color:white"><i class="fas fa-user-friends"style= "color:#C19CFC"></i>  <%= @game.players.count%> players</p>
   </div>
-    <p id="p2" style= "color:white">Ready to start ?</p>
+    <p id="p2" style= "color:#df58f8">Ready to start the blindtest ?</p>
     <% if @track %>
       <div class="button-start" id="start-button">
           <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
@@ -15,22 +15,17 @@
         <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
       </div>
     <% end %>
-</div>
-<% else %>
-<div class="next-song">
-  <p id="p2"><span style= "color:white">Next song</span> <span style= "color:#df58f8"> - Ready ?</span></p>
-</div>
-  <% if @track %>
-      <div class="button-start2" id="start-button2">
-          <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
-      </div>
-      <div class="hidden" style= "display: none">
-        <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
-      </div>
+  <% elsif @track_already_played && @track %>
+    <p id="p2"><span style= "color:white">Next song</span> <span style= "color:#df58f8"> - Ready ?</span></p>
+    <div class="button-start2" id="start-button2">
+        <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
+    </div>
+    <div class="hidden" style= "display: none">
+      <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
+    </div>
+  <% else %>
   <% end %>
-<% end %>
 </div>
-
     <div class="demo" id="demo" style="display: none">
       <div class="demo__colored-blocks">
         <div class="demo__colored-blocks-rotater">
