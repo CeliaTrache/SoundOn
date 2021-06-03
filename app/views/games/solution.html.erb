@@ -5,12 +5,12 @@
       <h3 class="mt-1"><%= @track.artist.tr('"[','').tr(']"','').truncate_words(4) %></h3>
     </div>
 
-    <h3 class="title-winner">Select winner(s)</h3>
+    <h3 class="title-winner mb-3">Select winner(s)</h3>
     <div class="margin" data-controller="update-player-score">
         <% @game.players.each do |player| %>
             <%= link_to player_path(player), data: { update_player_score_target: 'link', action: 'click->update-player-score#send', turbo: false}, class: "player-name" do %>
-            <div class="player-name"><%= player.nickname %>
-            <h6 id="score"><%= player.score || "0" %></h6>
+            <div class="player-name no-margin"><%= player.nickname %>
+              <p id="score"><%= player.score || "0" %></p>
             </div>
             <%= "" if player.score %>
             <% end%>
