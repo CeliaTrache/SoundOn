@@ -10,7 +10,7 @@ Track.delete_all
 celia = User.create(first_name: "Celia", last_name: "Trache", email: "celiatrache@gmail.com", password: "azerfvbnjklo")
 
 
-RSpotify.authenticate("2f6e9a91424245a4ba492468eccc9ec3", "51f213d73aa947e88ad9a7a886b233c7")
+RSpotify.authenticate(ENV["CLIENT_ID"], ENV["CLIENT_SECRET"])
 
 keywords = ['Funk & Soul Classics', 'Rock', 'Indie', 'Pop', 'Party', 'Happy', 'Chill', 'Electro']
 playlists = []
