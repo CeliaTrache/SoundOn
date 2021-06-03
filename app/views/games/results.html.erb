@@ -1,19 +1,19 @@
 <div class="d-flex flex-column align-items-center">
-  <h1 id="blind-test-over">Blind Test is over !</h1>
+  <h1 id="blind-test-over" data-controller="confetti">Blind Test is over !</h1>
 
 
 
   <div class="wrapper">
     <div class="card-score" id="winner" >
-      <p class="winner-is">🎉 Winner is</p>
+      <p class="winner-is"><i class="fas fa-crown"></i>Winner is</p>
       <div class= "rank-nickname">
         <p class="rank">1</p>
-        <p class="nickname"><%= "#{@players.first['nickname'].capitalize}" %></p>
+        <p class="nickname"><%= "#{@sorted_players.first['nickname'].capitalize}" %></p>
       </div>
-      <p class="score"><%= "#{@players.first['score'] || "0"}" %></p>
+      <p class="score"><%= "#{@sorted_players.first['score'] || "0"}" %></p>
     </div>
 
-    <% @players.each_with_index do |player, index| %>
+    <% @sorted_players.each_with_index do |player, index| %>
       <% if index > 0 %>
         <div class="card-score" >
           <div class= "rank-nickname">

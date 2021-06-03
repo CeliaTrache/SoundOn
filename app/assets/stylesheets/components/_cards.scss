@@ -91,10 +91,10 @@
   /* Auto Layout */
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   padding: 8px;
-
+  justify-content: space-between;
   position: absolute;
   width: 114px;
   height: 40px;
