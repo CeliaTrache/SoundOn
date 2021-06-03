@@ -62,7 +62,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     authorize @game
     @players = @game.players
-    @players = @players.as_json.sort! { |a, b| a[:score] <=> b[:score] }.reverse
+    @sorted_players = @players.order(score: :desc)
   end
 
   private

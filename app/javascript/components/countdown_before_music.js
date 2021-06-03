@@ -12,10 +12,11 @@ const countdown_before_music = () => {
   const detail_setup = document.getElementById("detail_setup");
   // 1. sur la page game show apparition btn game start
   // 2. selectionner dans le dom le btn start
-  // 3. écouter le click sut le btn 
+  // 3. écouter le click sut le btn
   //4. au click disparition du btn start
   //5. apparition de la demo
   //6. au bout de 4s apparition du titre et du countdown
+
   if(Start) {
     Start.addEventListener('click', (event) => {
       if (paragraph1) {
