@@ -15,18 +15,16 @@
         <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
       </div>
     <% end %>
-</div>
-<% else %>
-  <p id="p2" style= "color:#df58f8">Next song - Ready ?</p>
-  <% if @track %>
-      <div class="button-start2" id="start-button2">
-          <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
-      </div>
-      <div class="hidden" style= "display: none">
-        <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
-      </div>
+  <% elsif @track_already_played && @track %>
+    <p id="p2" style= "color:#df58f8">Next song - Ready ?</p>
+    <div class="button-start2" id="start-button2">
+        <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
+    </div>
+    <div class="hidden" style= "display: none">
+      <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
+    </div>
+  <% else %>
   <% end %>
-<% end %>
 </div>
 
     <div class="demo" id="demo" style="display: none">
