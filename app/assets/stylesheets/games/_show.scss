@@ -11,8 +11,8 @@
 }
 
 .button-start2 {
-  padding-top: 363px;
-  padding-left: 87px;
+  padding-top: 192px;
+  padding-left: 96px;
 }
 #detail_setup {
   margin-top: 66px;
@@ -23,6 +23,21 @@
 .title-start > #p2 {
   color: #c19cfc;
   padding-top: 84px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: bold;
+}
+.next-song {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: bold;
+  padding-top: 79px;
+  padding-left: 55px;
+  display:flex;
 }
 .button-start {
   margin: 90px;
@@ -30,6 +45,14 @@
 }
 
 .start-button2 {
-  margin-top: 350px;
-  margin-left: 92px;
+  padding-top: 158px;
+  padding-left: 96px;
+}
+
+.title-start > #p1 {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: bold;
 }
