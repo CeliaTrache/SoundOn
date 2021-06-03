@@ -10,7 +10,7 @@
         <p class="rank">1</p>
         <p class="nickname"><%= "#{@sorted_players.first['nickname'].capitalize}" %></p>
       </div>
-      <p class="score"><%= "#{@sorted_players.first['score'] || "0"}" %></p>
+      <p class="score"><%= "#{@sorted_players.first['score'] || 0 }" %></p>
     </div>
 
     <% @sorted_players.each_with_index do |player, index| %>
@@ -20,7 +20,7 @@
             <p class="rank"><%= index + 1 %></p>
             <p class="nickname"><%= "#{player['nickname'].capitalize}" %></p>
           </div>
-          <p class="score"><%= "#{player['score'] || "0"}" %></p>
+          <p class="score"><%= "#{player['score'] || 0 }" %></p>
         </div>
       <% end %>
     <% end %>
