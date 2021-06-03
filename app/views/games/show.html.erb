@@ -6,7 +6,7 @@
     <p id="p1" style= "color:white"><i class="fas fa-music"style= "color:#C19CFC"></i>  <%=@game.playlist_title%></p>
     <p id="p1" style= "color:white"><i class="fas fa-user-friends"style= "color:#C19CFC"></i>  <%= @game.players.count%> players</p>
   </div>
-    <p id="p2" style= "color:#df58f8">Ready to start the blindtest ?</p>
+    <p id="p2" style= "color:#df58f8">Ready to start ?</p>
     <% if @track %>
       <div class="button-start" id="start-button">
           <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
@@ -16,7 +16,7 @@
       </div>
     <% end %>
   <% elsif @track_already_played && @track %>
-    <p id="p2"><span style= "color:white">Next song</span> <span style= "color:#df58f8"> - Ready ?</span></p>
+    <p id="p2"><span style= "color:white">Next song -</span> <span style= "color:#df58f8"> Ready</span><span style= "color:white">?</span></p>
     <div class="button-start2" id="start-button2">
         <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
     </div>
