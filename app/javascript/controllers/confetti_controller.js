@@ -21,7 +21,7 @@ export default class extends Controller {
     // Remove canvas after 5 seconds
     setTimeout(function () {
       document.body.removeChild(canvas)
-    }, 5000)
+    }, 500000)
   }
 
   fire(particleRatio, options) {
@@ -34,7 +34,7 @@ export default class extends Controller {
   }
 
   createCanvas() {
-    document.body.insertAdjacentHTML('beforeend', `<canvas id="confetti" class="fixed inset-0 w-full h-full pointer-events-none z-50"></canvas>`)
+    document.body.insertAdjacentHTML('afterbegin', `<canvas id="confetti" class="fixed inset-0 w-full h-full pointer-events-none z-50"></canvas>`)
   }
 
   get canvas() {
