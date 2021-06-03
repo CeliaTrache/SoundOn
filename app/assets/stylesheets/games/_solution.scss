@@ -32,12 +32,12 @@ h3 {
   font-size: 20px;
   letter-spacing: 0.75px;
   line-height: 24px;
-  padding: 6px 40px;
+  padding: 6px 25px;
   margin-bottom: 10px;
 }
 
 .player-name-active {
-  background-color: #24202B;
+  background-color: #E158F9;
   color: white;
   width: 340px;
   border-radius: 12px;
@@ -51,10 +51,15 @@ h3 {
   font-size: 20px;
   letter-spacing: 0.75px;
   line-height: 24px;
-  outline: 3px solid #E158F9;
-  padding: 6px 40px;
+  //outline: 3px solid #E158F9;
+  padding: 6px 25px;
   margin-bottom: 10px;
 }
+
+.player-name-active .player-name {
+  background-color: #E158F9;
+}
+
 
 #score {
   color: #C19CFC;
@@ -65,7 +70,7 @@ h3 {
   //height: 32px;
   // width: 32px;
   border-radius: 50%;
-  padding: 7px 10px;
+  padding: 7px 7px;
 }
 
 .no-margin {
