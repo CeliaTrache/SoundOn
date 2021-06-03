@@ -1,6 +1,7 @@
 .search {
   padding-top: 42px;
   margin-right: -100px;
+  //height: 54px;
   }
 
 .btn {
@@ -11,4 +12,11 @@
   margin-top: 480px;
   margin-left: -31px;
   margin-right: 16px;
+  height: calc(1.5em + 0.75rem + 24px) !important;
+}
+
+.within-search {
+  position: absolute;
+  color: #3C0594;
+  right: 20px;
 }

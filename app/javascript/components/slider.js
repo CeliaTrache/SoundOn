@@ -85,6 +85,14 @@ const initSlider = () => {
     //show value
     range.find(".count").text(points).val(points);
 
+    // pluralize minute
+    const minute = document.querySelector('.minute');
+    if (points == 1) {
+      minute.innerText = 'minute';
+    } else {
+      minute.innerText = 'minutes';
+    }
+
     prevVal = deg;
     lastPosition = position.x;
   }

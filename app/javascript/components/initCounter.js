@@ -23,5 +23,6 @@ const initCounter = () => {
       counterDisplayElem.innerHTML = count;
     }
   };
-}
+};
+
 export { initCounter };
