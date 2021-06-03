@@ -23,6 +23,8 @@ class PlaylistsController < ApplicationController
   def create_tracks
     @game = Game.find(params[:game_id])
     @playlist = Playlist.find(params[:id])
+    @game.playlist_title = RSpotify::Playlist.find_by_id(@playlist.spotify_id).name
+    @game.save
     authorize @playlist
     tracks_number = @game.duration * 60 / 15
     tracks = RSpotify::Playlist.find_by_id(@playlist.spotify_id, market: nil).tracks(limit: tracks_number)

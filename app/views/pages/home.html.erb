@@ -15,7 +15,7 @@
         <h6 style="padding-bottom: 40px; text-align: left;">Guess to stay on track ! 🚀</h6>
         <div class="sound-on-center">
           <h2 style="padding-top: 97px; font-weight: bold;">Let's play a game</h2>
-            <div class="start-button" id="start-button" >   
+            <div class="start-button" id="start-btn" >   
             <%= link_to (user_signed_in? ? new_game_path : user_spotify_omniauth_authorize_path) do %>
               <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px">
             <% end %>
