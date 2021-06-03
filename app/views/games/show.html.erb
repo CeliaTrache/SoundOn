@@ -1,12 +1,12 @@
 <div class="title-start" style= "display: block">
   <% if !@track_already_played %>
-    <p id="p1" style= "color:#df58f8">Your setup is complete !</p>
+    <p id="p1" style= "color:white">Your setup is complete !</p>
   <div id="detail_setup">
-    <p id="p1" style= "color:#df58f8"><strong>Duration :</strong> <%= @game.duration%> minutes</p>
-    <p id="p1" style= "color:#df58f8"><strong>Playlist :</strong> <%=@game.playlist_title%></p>
-    <p id="p1" style= "color:#df58f8"><strong>You are :</strong> <%=@game.players.count%> players</p>
+    <p id="p1" style= "color:white"><i class="fas fa-history" style= "color:#C19CFC"></i>  <%= @game.duration%> minutes</p>
+    <p id="p1" style= "color:white"><i class="fas fa-music"style= "color:#C19CFC"></i>  <%=@game.playlist_title%></p>
+    <p id="p1" style= "color:white"><i class="fas fa-user-friends"style= "color:#C19CFC"></i>  <%= @game.players.count%> players</p>
   </div>
-    <p id="p2" style= "color:#df58f8">Ready to start the blindtest ?</p>
+    <p id="p2" style= "color:white">Ready to start ?</p>
     <% if @track %>
       <div class="button-start" id="start-button">
           <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
@@ -17,7 +17,9 @@
     <% end %>
 </div>
 <% else %>
-  <p id="p2" style= "color:#df58f8">Next song - Ready ?</p>
+<div class="next-song">
+  <p id="p2"><span style= "color:white">Next song</span> <span style= "color:#df58f8"> - Ready ?</span></p>
+</div>
   <% if @track %>
       <div class="button-start2" id="start-button2">
           <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
