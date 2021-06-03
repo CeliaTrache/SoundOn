@@ -33,6 +33,7 @@ import { initSlider } from '../components/slider';
 import { countdown } from '../components/countdown';
 import { initCounter } from '../components/initCounter';
 import { logo } from '../components/logo';
+import { countdown_before_music } from '../components/countdown_before_music';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   countdown();
   logo();
   initCounter();
+  countdown_before_music();
 });
 
 import "controllers"

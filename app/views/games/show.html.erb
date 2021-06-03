@@ -1,14 +1,17 @@
+<div class="title-start" style= "display: block">
+  <p id="p1" style= "color:#c19cfc">Your setup is complete !</p>
+  <p id="p2" style= "color:#c19cfc">Are you ready to start the blindtest ?</p>
+</div>
+<% if @track %>
+      <div class="button-start" id="start-button">
+          <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px" id="start">
+      </div>
+      <div id="hidden" style= "display: none">
+        <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', id:'violet-button' , data: { turbo: "false" } %>
+      </div>
+<% end %>
 
-
-
-
-<div class="d-flex flex-column align-items-center">
-  <% if @track %>
-    <h1 class="title">Find the <strong style="color:#E359F9"><%= @questions.sample %></strong>!</h1>
-
-    <div id="app" class="mb-4"></div>
-
-    <div class="demo" id="countdown_starter" style="display: none;">
+    <div class="demo" id="demo" style="display: none">
       <div class="demo__colored-blocks">
         <div class="demo__colored-blocks-rotater">
           <div class="demo__colored-block"></div>
@@ -33,22 +36,25 @@
                   l7,-7 a16,16 0 0,1 22.6,22.6 l-30,30 l35,0 L69,73
                   a20,10 0 0,1 20,10 a17,17 0 0,1 -34,0 L55,83
                   l0,-61 L40,28" />
-      </svg>
+        </svg>
       </div>
     </div>
 
-    <button type="button" id="start" style="background-color: transparent; border: none">
-      <img src="<%=image_path "play-btn.svg"%>">
-    </button>
-    <%# <button type="button" id="time" class="btn-player mb-4"> Add 15s </button> %>
-    <%= link_to "Next", solution_game_path(@game, track_id: @track.id), class: 'violet-button', data: { turbo: "false" } %>
 
-    <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
-    <audio src="" autoplay></audio>
-  <% else %>
-    <div class="title">
-      <h2>Your blindtest is over! ⌛️</h2>
+
+<div id="all_word" style= "display: none">
+    <div class="d-flex flex-column align-items-center" id="all">
+      <% if @track %>
+        <h1 class="title" id="title">Find the <strong style="color:#E359F9"><%= @questions.sample %></strong>!</h1>
+
+        <div id="app" class="mb-4"></div>
+        <div id="player" data-token="<%= @user.token %>" data-track-id="<%= @track.spotify_url %>"></div>
+        <audio src="" autoplay></audio>
+      <% else %>
+        <div class="title">
+          <h2>Your blindtest is over! ⌛️</h2>
+        </div>
+        <%= link_to "Go to results", results_game_path(@game), class: "violet-button" %>
+      <% end %>
     </div>
-    <%= link_to "Go to results", results_game_path(@game), class: "violet-button" %>
-  <% end %>
 </div>

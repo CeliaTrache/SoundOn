@@ -9,9 +9,9 @@ $bgColor: #9796f0;
 $numOfColBlocks: 3; // must be higher than 2
 $deg: 360deg / $numOfColBlocks;
 
-$red: #E94560;
-$yellow: #C19CFC;
-$blue: #0F3460;
+$red: #7635ec;
+$yellow: #c19cfc;
+$blue: #df58f8;
 
 $blocksColors: (
   1: $red,
@@ -233,4 +233,26 @@ body {
   20%, 96% {
     opacity: 0;
   }
+}
+
+
+#start {
+  color: #df58f8;
+}
+
+.title-start> p {
+color: #c19cfc;
+    padding-top: 46px;
+    font-size: 26px;
+    text-align: center;
+}
+
+
+.button-start {
+  margin: 90px;
+  margin-top: 160px;
+}
+
+.button-start > a {
+  margin-left: 0px;
 }
