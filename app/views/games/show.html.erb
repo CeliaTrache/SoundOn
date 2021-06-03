@@ -2,7 +2,7 @@
   <% if !@track_already_played %>
     <p id="p1" style= "color:#df58f8">Your setup is complete !</p>
   <div id="detail_setup">
-    <p id="p1" style= "color:#df58f8"><strong>Duration :</strong> <%= @game.duration%> minutes</p>
+    <p id="p1" style= "color:#df58f8"><strong>Duration :</strong> <%= pluralize@game.duration, "minute"%></p>
     <p id="p1" style= "color:#df58f8"><strong>Playlist :</strong> <%=@game.playlist_title%></p>
     <p id="p1" style= "color:#df58f8"><strong>You are :</strong> <%=@game.players.count%> players</p>
   </div>
