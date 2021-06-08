@@ -44,7 +44,7 @@ body {
 .demo {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 300px;
   width: $sizeBig;
   height: $size;
   margin-top: $size / -2;
@@ -219,7 +219,7 @@ body {
     border-radius: 50%;
     transform: rotate(1080deg);
   }
-  
+
   100% {
     border-radius: $contBr;
     transform: rotate(1440deg);
