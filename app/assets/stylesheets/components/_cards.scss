@@ -36,6 +36,7 @@
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   flex-wrap: wrap;
+  position: relative;
 }
 
 .score {
@@ -87,8 +88,8 @@
   position: absolute;
   width: 114px;
   height: 40px;
-  left: 131px;
-  top: 147px;
+  left: 110px;
+  top: -20px;
 
   background: #3B324C;
   border-radius: 20px;
