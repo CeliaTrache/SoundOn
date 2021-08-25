@@ -1,6 +1,6 @@
 class FetchPlaylist
   def get_playlist(keyword)
-    playlists = RSpotify::Playlist.search(keyword)
+    RSpotify::Playlist.search(keyword)
   end
 
   def get_playlists(user)

@@ -15,14 +15,14 @@
         <h6 style="padding-bottom: 20px; text-align: left; font-size: 26px">Guess to stay on track ! 🚀</h6>
         <div class="sound-on-center">
           <h2 style="padding-top: 97px; font-weight: bold; font-size: 26px">Let's play a game</h2>
-            <div class="start-button" id="start-button" >   
+            <div class="start-button" id="start-button" >
             <%= link_to (user_signed_in? ? new_game_path : user_spotify_omniauth_authorize_path) do %>
               <img src="<%=image_path "button_purple.png"%>" style="padding-bottom: 32px">
             <% end %>
             </div>
         </div>
          <div class="d-flex justify-content-center" id="spotify">
-          <%= link_to "Login with another account", user_spotify_omniauth_authorize_path, class: "btn btn-spotify" %>
+          <%= link_to user_signed_in? ? "Login with another account" : "Login", user_spotify_omniauth_authorize_path, class: "btn btn-spotify" %>
          </div>
       </div>
     </div>
